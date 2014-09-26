@@ -62,10 +62,10 @@ get '/testjsonparse' do
 #    c.affiliate_id = ENV["AFID"]
 #  end
   
-  json='{  "President": "Alan Isaac",  "CEO": "David Richardson",  "India": ["Sachin Tendulkar",    "Virender Sehwag",    "Gautam Gambhir",],"Srilanka": ["Lasith Malinga", "Angelo Mathews", "Kumar Sangakkara"], "England": [ "Alastair Cook", "Jonathan Trott", "Kevin Pietersen"]}'
+  json='{"President": "Alan Isaac","CEO": "David Richardson","India": ["Sachin Tendulkar","Virender Sehwag","Gautam Gambhir",],"Srilanka": ["Lasith Malinga", "Angelo Mathews", "Kumar Sangakkara"], "England": [ "Alastair Cook", "Jonathan Trott", "Kevin Pietersen"]}'
   #json = File.read('input.json')
   obj = JSON.parse(json)
-  
-  "HEEEEEE."
+  jsonFetch = obj.fetch("President")
+  puts jsonFetch
   
 end
